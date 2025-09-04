@@ -39,6 +39,15 @@ class QuoteCard extends StatelessWidget {
               style: TextStyle(fontSize: 14.0, color: Colors.black),
             ),
             SizedBox(height: 8.0),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Chip(
+                label: Text(quote.category),
+                backgroundColor: Colors.grey.shade200,
+                visualDensity: VisualDensity.compact,
+              ),
+            ),
+            SizedBox(height: 8.0),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [

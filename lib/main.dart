@@ -63,7 +63,7 @@ class _QuoteListState extends State<QuoteList> {
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
-      body: Column(
+      body: ListView(
         children: quotes
             .map(
               (quote) => QuoteCard(
