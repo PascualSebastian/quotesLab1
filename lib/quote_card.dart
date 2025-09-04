@@ -10,11 +10,19 @@ class QuoteCard extends StatelessWidget {
     required this.quote,
     required this.onLike,
     required this.onDelete,
+    super.key
   });
+
+  Color cardColor(String c) => switch (c.toLowerCase()) {
+    'inspiration' => Colors.blueAccent.shade100.withValues(),
+    'humor'       => Colors.amber.shade100,
+    _             => Colors.purple.shade100,
+  };
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: cardColor(quote.category),
       margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -23,12 +31,12 @@ class QuoteCard extends StatelessWidget {
           children: [
             Text(
               quote.text,
-              style: TextStyle(fontSize: 18.0, color: Colors.grey[600]),
+              style: TextStyle(fontSize: 18.0, color: Colors.black),
             ),
             SizedBox(height: 6.0),
             Text(
               quote.author,
-              style: TextStyle(fontSize: 14.0, color: Colors.grey[800]),
+              style: TextStyle(fontSize: 14.0, color: Colors.black),
             ),
             SizedBox(height: 8.0),
             Row(
