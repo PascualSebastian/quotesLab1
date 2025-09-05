@@ -5,6 +5,8 @@ import 'quote_card.dart';
 void main() => runApp(MaterialApp(home: QuoteList()));
 
 class QuoteList extends StatefulWidget {
+  const QuoteList({super.key});
+
   @override
   _QuoteListState createState() => _QuoteListState();
 }
@@ -24,7 +26,8 @@ class _QuoteListState extends State<QuoteList> {
     Quote(
       author: 'Oscar Wilde',
       text: 'The truth is rarely pure and never simple',
-      category: 'Philosophy'
+      category: 'Philosophy',
+      createdAt: DateTime(2024, 8, 9),
     ),
   ];
 

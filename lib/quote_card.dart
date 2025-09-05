@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'quote.dart';
+import 'package:intl/intl.dart';
 
 class QuoteCard extends StatelessWidget {
   final Quote quote;
   final VoidCallback onLike;
   final VoidCallback onDelete;
   
-  QuoteCard({
+  const QuoteCard({
     required this.quote,
     required this.onLike,
     required this.onDelete,
@@ -39,13 +40,19 @@ class QuoteCard extends StatelessWidget {
               style: TextStyle(fontSize: 14.0, color: Colors.black),
             ),
             SizedBox(height: 8.0),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Chip(
-                label: Text(quote.category),
-                backgroundColor: Colors.grey.shade200,
-                visualDensity: VisualDensity.compact,
-              ),
+            Wrap(
+              spacing: 8,
+              children: [
+                Chip(
+                  label: Text(quote.category),
+                  backgroundColor: Colors.grey.shade200,
+                  visualDensity: VisualDensity.compact,
+                ),
+                Text(
+                  DateFormat('MMM d, yyyy').format(quote.createdAt),
+                  style: TextStyle(color: Colors.black),
+                ),
+              ],
             ),
             SizedBox(height: 8.0),
             Row(

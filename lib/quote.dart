@@ -1,8 +1,15 @@
 class Quote {
-  String text = "";
-  String author = "";
-  int likes = 0;
-  String category = "";
+  final String text;
+  final String author;
+  final String category;      
+  final DateTime createdAt;     
+  int likes;                    
 
-  Quote({required this.text, required this.author, this.likes = 0, required this.category});
+  Quote({
+    required this.text,
+    required this.author,
+    this.category = 'General',
+    DateTime? createdAt,
+    this.likes = 0,
+  }) : createdAt = createdAt ?? DateTime.now();
 }
